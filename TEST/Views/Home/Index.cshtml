@@ -1,0 +1,119 @@
+﻿@model IEnumerable<TEST.SupportList>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SugestionNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccepedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResolvedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Steps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StepsToReproduces)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Severity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SystemSelection)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SugestionNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccepedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResolvedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Steps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StepsToReproduces)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority.Priority1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Severity.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SystemSelection.Name)
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1,0 +1,162 @@
+﻿@model TEST.AspNetUser
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delete User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.SecurityStamp)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.TwoFactorEnabled)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.LockoutEndDateUtc)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.LockoutEnabled)
+        </dd>
+
+        <dt hidden>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </dt>
+
+        <dd hidden>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktivan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktivan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetRole)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Back to User List", "Index")
+        </div>
+    }
+</div>

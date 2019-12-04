@@ -1,0 +1,165 @@
+﻿@model IEnumerable<TEST.AspNetUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit/Create User</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning" })
+</p>
+<style>
+    table, th, td {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    table#t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fceeee;
+    }
+
+    table#t01 th {
+        background-color: #811717;
+        color: white;
+    }
+</style>
+<table class="table" id="t01">
+    <tr>
+        <th>
+            Action
+            
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktivan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetRole.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+        </td>
+        <td  class="hidden">
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.EmailConfirmed)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.PasswordHash)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.SecurityStamp)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.LockoutEnabled)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.AccessFailedCount)
+        </td>
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktivan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetRole.Name)
+        </td>
+        <td>
+         
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
