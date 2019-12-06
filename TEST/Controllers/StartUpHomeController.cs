@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,8 +37,7 @@ namespace TEST.Controllers
         [HttpPost]
         public ActionResult Create(AspNetUser user)
         {
-            if (ModelState.IsValid)
-            {
+           
                 using (db)
                 {
                     var createUser = new AspNetUser()
@@ -53,15 +53,16 @@ namespace TEST.Controllers
                         Aktivan = user.Aktivan
 
                     };
-
+                
                     db.AspNetUsers.Add(createUser);
+               
                     db.SaveChanges();
-                   
-                    
+                
+                
+
                 }
                  return RedirectToAction("Index");
-            }
-            return View();
+          
         }
 
         [HttpGet]

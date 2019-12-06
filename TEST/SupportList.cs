@@ -11,25 +11,50 @@ namespace TEST
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class SupportList
     {
         public string id { get; set; }
+
+        [Display(Name = "Ticket No")]
         public Nullable<int> SugestionNo { get; set; }
+
+        [Display(Name = "Rased By")]
         public string CreatedBy { get; set; }
         public string UserID { get; set; }
         public string StatusID { get; set; }
         public string CategoryID { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Raised On")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> CreatedOn { get; set; }
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> AccepedOn { get; set; }
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DueOn { get; set; }
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> ResolvedOn { get; set; }
+
+        [Display(Name = "Priority")]
         public string PriorityID { get; set; }
         public string Steps { get; set; }
         public string Notes { get; set; }
         public string SelectionID { get; set; }
         public string StepsToReproduces { get; set; }
         public string Title { get; set; }
+
+        [Display(Name = "Severity")]
         public string SeverityID { get; set; }
         public string CommentID { get; set; }
     

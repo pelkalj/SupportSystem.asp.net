@@ -20,6 +20,54 @@ namespace TEST.Controllers
              
         }
 
+        public ActionResult Create()
+        {
+            using (db)
+            {
+                var statuses = db.Status.ToList();
+                var categories = db.Categories.ToList();
+                var severities = db.Severities.ToList();
+                var priorities = db.Priorities.ToList();
+                var model = new Models.SupportListViewModel
+                {
+                    status = statuses,
+                    category = categories,
+                    severity = severities,
+                    priority = priorities,
+                };
+
+                return View(model);
+            }
+
+        }
+
+        public ActionResult Create(SupportList list)
+        {
+
+            using (db)
+            {
+                var supportList = new SupportList()
+                {
+                    id = Guid.NewGuid().ToString(),
+                    SugestionNo = list.SugestionNo,
+                    CreatedBy = list.CreatedBy
+
+
+
+
+
+                    
+
+
+                };
+                return View();
+
+
+            }
+        }
+
+
+
        
     }
 }

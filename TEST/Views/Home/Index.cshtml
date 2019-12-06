@@ -1,12 +1,50 @@
 ﻿@model IEnumerable<TEST.SupportList>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<h2>Support List</h2>
+
+<p></p>
+<style>
+    table, th, td {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    table#t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fceeee;
+    }
+
+    table#t01 th {
+        background-color: #811717;
+        color: white;
+    }
+</style>
+<table class="table" id="t01">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.SugestionNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Severity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedBy)
@@ -14,7 +52,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CreatedOn)
         </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.AccepedOn)
         </th>
         <th>
@@ -23,37 +61,22 @@
         <th>
             @Html.DisplayNameFor(model => model.ResolvedOn)
         </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.Steps)
         </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.Notes)
         </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.StepsToReproduces)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.CommentID)
         </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Priority)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Severity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
+        <th hidden>
             @Html.DisplayNameFor(model => model.SystemSelection)
         </th>
         <th></th>
@@ -65,12 +88,27 @@
             @Html.DisplayFor(modelItem => item.SugestionNo)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Severity.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority.Priority1)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.CreatedBy)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedOn)
         </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.AccepedOn)
         </td>
         <td>
@@ -79,40 +117,25 @@
         <td>
             @Html.DisplayFor(modelItem => item.ResolvedOn)
         </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.Steps)
         </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.Notes)
         </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.StepsToReproduces)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.CommentID)
         </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.AspNetUser.Email)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Priority.Priority1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Severity.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status.Name)
-        </td>
-        <td>
+        <td hidden>
             @Html.DisplayFor(modelItem => item.SystemSelection.Name)
         </td>
-       
+
     </tr>
 }
 
